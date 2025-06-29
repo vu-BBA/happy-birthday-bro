@@ -320,30 +320,63 @@ p{
   0% { transform: translateY(0) scale(1) rotate(0deg);}
   100% { transform: translateY(180px) scale(0.7) rotate(360deg);}
 }
-
 /* Responsive Design */
 @media (max-width: 600px) {
   .letter-card {
     width: 96vw;
     max-width: 340px;
-    height: 200px;
+    min-height: 160px;
+    height: auto;
     border-radius: 18px;
   }
-  .cat-gif-wrapper { width: 90vw; max-width: 170px; height: 88px; }
-  .cat-gif { border-radius: 12px; }
+  .cat-gif-wrapper { width: 90vw; max-width: 170px; height: 14vw; min-height: 60px; }
+  .cat-gif { border-radius: 12px; max-width: 100%; max-height: 100%; }
   .gift-gif { width: 36px; height: 36px; border-radius: 7px;}
   .gift-link { padding: 4px 7vw 1px 7vw;}
-  .pray-title, .birthday-title { font-size: 1.04rem; }
+  .pray-title, .birthday-title { font-size: clamp(1rem, 3vw, 1.04rem); }
 }
 @media (max-width: 400px) {
   .letter-card {
     width: 92vw;
-    height: 145px;
+    min-height: 110px;
+    height: auto;
   }
+  .letter-front .envelope-emoji {
+    font-size: 2.2rem;
+  }
+  .cat-gif-wrapper { width: 70vw; max-width: 100px; height: 11vw; min-height: 36px;}
+  .birthday-title, .pray-title { font-size: clamp(.83rem, 2.5vw, 1rem); }
+  .gift-link { font-size: .99rem; }
+}
+.pray-title, .birthday-title, h3, p {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.letter-page {
+  overflow-y: auto;
+  max-height: 100%;
+}
   .letter-front .envelope-emoji {
     font-size: 2.2rem;
   }
   .cat-gif-wrapper { width: 70vw; max-width: 100px; height: 38px;}
   .birthday-title, .pray-title { font-size: .83rem; }
   .gift-link { font-size: .99rem; }
+}
+.pray-title, h3 {
+  font-size: clamp(1rem, 4vw, 1.5rem);
+}
+p {
+  font-size: clamp(0.8rem, 3vw, 1rem);
+}
+.pray-title, h3, p {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.letter-page {
+  overflow-y: auto;
+}
+.letter-page {
+  max-height: 100%;
+  overflow-y: auto;
 }
